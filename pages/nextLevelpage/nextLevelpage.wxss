@@ -1,0 +1,84 @@
+::-webkit-scrollbar{
+  display:none;
+}
+.wrap{
+  overflow-x:scroll;
+  border:4rpx solid #CDD6D5;
+}
+.table{
+  display:inline-block;
+  --indent-width:26rpx;
+}
+.indent2{
+  text-indent:calc(var(--indent-width));
+}
+.indent3{
+  text-indent:calc(var(--indent-width)*2);
+}
+.indent4{
+  text-indent:calc(var(--indent-width)*3);
+}
+.indent5{
+  text-indent:calc(var(--indent-width)*4);
+}
+.indent6{
+  text-indent:calc(var(--indent-width)*5);
+}
+.indent7{
+  text-indent:calc(var(--indent-width)*6);
+}
+.indent8{
+  text-indent:calc(var(--indent-width)*7);
+}
+.indent9{
+  text-indent:calc(var(--indent-width)*8);
+}
+.tr{
+  white-space:nowrap;
+  border-bottom:2rpx solid #CDD6D5;
+}
+
+.th{
+  background-color:#5787EB;
+  color:#fff;
+}
+.td{
+  display:inline-block;
+  padding-left:10rpx;
+  min-width:330rpx;
+  font:30rpx/60rpx '微软雅黑';
+  border-right:2rpx solid #CDD6D5;
+}
+
+.td:last-child{
+  border-right:0;
+}
+.opt{
+  width:30rpx;
+  height:30rpx;
+}
+/*.lev1,.lev2,*/
+
+/*.erji,.sanji,.siji,.wuji,.liuji,.qiji,.baji{*/
+.hideWrap{
+  display:none;
+}
+
+.show{
+  display:inline-block;
+}
+.plusImg{
+  display:none;
+  --img-size:20rpx;
+  width:var(--img-size);
+  height:var(--img-size);
+}
+.plusImg.show{
+  display:inline-block;
+}
+
+.hide{
+  display:none;
+}
+
+

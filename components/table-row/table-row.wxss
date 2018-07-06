@@ -1,0 +1,24 @@
+.tr{
+  white-space:nowrap;
+  border-bottom:2rpx solid #CDD6D5;
+}
+.td{
+  display:inline-block;
+  padding-left:10rpx;
+  min-width:330rpx;
+  font:30rpx/60rpx '微软雅黑';
+  border-right:2rpx solid #CDD6D5;
+  white-space:pre;
+}
+.td:last-child{
+  border-right:0;
+}
+.plusImg{
+  display:none;
+  --img-size:20rpx;
+  width:var(--img-size);
+  height:var(--img-size);
+}
+.plusImg.show{
+  display:inline-block;
+}

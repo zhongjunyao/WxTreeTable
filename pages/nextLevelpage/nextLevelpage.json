@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "下级页",
+	"usingComponents": {
+    "tree-Table": "/components/treetable/treetable"
+  }
+}

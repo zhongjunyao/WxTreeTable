@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/cindex/cindex",
+    "pages/index/index",
+    "pages/treepage/tree",
+    "pages/nextLevelpage/nextLevelpage"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

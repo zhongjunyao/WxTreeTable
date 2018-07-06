@@ -1,0 +1,18 @@
+
+<template name='table-row'>
+  <view class='tr' data-id='{{user_id}}' bindtap='{{index==9?"_jump":"_hide"}}'>
+    <view class='td indent{{index}}'><image src='{{flag?"/static/images/minus.png":"/static/images/plus.png"}}' class='plusImg {{!!nextLevel ? "show":""}}'></image>{{name}}</view>
+    <view class='td head_td'>
+      <!-- <image src='{{head_pic}}' class='head_pic'></image> -->
+      <image src='/static/images/plus.png' class='head_pic'></image>
+      <!-- <text>头像</text> -->
+    </view>
+    <view class='td'>{{next_num}}</view>
+    <view class='td'>{{rebate_total}}</view>
+    <view class='td'>{{consume_total}}</view>
+    <view class='td'>{{order_num}}</view>
+    <view class='td'>{{recent_buying_time}}</view>
+    <view class='td'>{{reg_time}}</view>
+    <view class='td'>{{mobile}}</view>
+  </view>
+</template>

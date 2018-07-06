@@ -1,0 +1,169 @@
+<import src='../../templates/table-row/table-row.wxml'/>
+<view class='wrap'>
+  <view class='table'>
+    <view class='tr th'>
+      <view class='td'><text class='noview'>{{innerTitle[0]}}</text></view>
+      <view class='td head_td'>{{innerTitle[1]}}</view>
+      <view class='td'>{{innerTitle[2]}}</view>
+      <view class='td'>{{innerTitle[3]}}</view>
+      <view class='td'>{{innerTitle[4]}}</view>
+      <view class='td'>{{innerTitle[5]}}</view>
+      <view class='td'>{{innerTitle[6]}}</view>
+      <view class='td'>{{innerTitle[7]}}</view>
+      <view class='td'>{{innerTitle[8]}}</view>
+    </view>
+    <block wx:for='{{innerList}}' wx:key='*this' wx:for-item='lev1'>
+      <template is='table-row' data='{{...lev1,...{index:1} }}'/>
+      <!-- <view class='lev1 tr' data-id='{{lev1.user_id}}' bindtap='hide'>
+        <view class='td'><image src='{{lev1.flag?minusImg:plusImg}}' class='plusImg {{!!lev1.nextLevel ? "show":""}}'></image>{{lev1.name}}</view>
+        <view class='td'>
+          <image src='{{lev1.head_pic}}' class='head_pic'></image>
+        </view>
+        <view class='td'>{{lev1.next_num}}</view>
+        <view class='td'>{{lev1.rebate_total}}</view>
+        <view class='td'>{{lev1.consume_total}}</view>
+        <view class='td'>{{lev1.order_num}}</view>
+        <view class='td'>{{lev1.recent_buying_time}}</view>
+        <view class='td'>{{lev1.reg_time}}</view>
+        <view class='td'>{{lev1.mobile}}</view>
+      </view> -->
+      <block wx:if='{{lev1.nextLevel}}' wx:for='{{lev1.nextLevel}}' wx:key='1' wx:for-item='lev2'>
+        <view class='hideWrap {{lev1.flag?"show":""}}'>
+          <template is='table-row' data='{{...lev2,...{index:2} }}'/>
+          <!-- <view class='lev2 tr' data-id='{{lev2.user_id}}' bindtap='hide'>
+            <view class='td indent2'><image src='{{lev2.flag?minusImg:plusImg}}' class='plusImg {{!!lev2.nextLevel ? "show":""}}'></image>{{lev2.name}}</view>
+            <view class='td'>{{lev2.user_id}}</view>
+            <view class='td'>{{lev2.up_user_id}}</view>
+            <view class='td {{lev2.mobile?"":"hide"}}'>{{lev2.mobile}}</view>
+            <view class='td {{lev2.opt?"":"hide"}}'>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+            </view>
+          </view> -->
+          <block wx:if='{{lev2.nextLevel}}' wx:for='{{lev2.nextLevel}}' wx:key='1' wx:for-item='lev3'>
+            <view class='hideWrap {{lev2.flag?"show":""}}'>
+              <template is='table-row' data='{{...lev3,...{index:3} }}'/>
+              <!-- <view class='lev3 tr' data-id='{{lev3.user_id}}' bindtap='hide'>
+                <view class='td indent3'><image src='{{lev3.flag?minusImg:plusImg}}' class='plusImg {{!!lev3.nextLevel ? "show":""}}'></image>{{lev3.name}}</view>
+                <view class='td'>{{lev3.user_id}}</view>
+                <view class='td'>{{lev3.up_user_id}}</view>
+                <view class='td {{lev3.mobile?"":"hide"}}'>{{lev3.mobile}}</view>
+                <view class='td {{lev3.opt?"":"hide"}}'>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                </view>
+              </view> -->
+              <block wx:if='{{lev3.nextLevel}}' wx:for='{{lev3.nextLevel}}' wx:key='1' wx:for-item='lev4'>
+                <view class='hideWrap {{lev3.flag?"show":""}}'>
+                  <template is='table-row' data='{{...lev4,...{index:4} }}'/>
+                  <!-- <view class='lev4 tr' data-id='{{lev4.user_id}}' bindtap='hide'>
+                    <view class='td indent4'><image src='{{lev4.flag?minusImg:plusImg}}' class='plusImg {{!!lev4.nextLevel ? "show":""}}'></image>{{lev4.name}}</view>
+                    <view class='td'>{{lev4.user_id}}</view>
+                    <view class='td'>{{lev4.up_user_id}}</view>
+                    <view class='td {{lev4.mobile?"":"hide"}}'>{{lev4.mobile}}</view>
+                    <view class='td {{lev4.opt?"":"hide"}}'>
+                      <image src='{{lev4.opt}}' class='opt'></image>
+                      <image src='{{lev4.opt}}' class='opt'></image>
+                      <image src='{{lev4.opt}}' class='opt'></image>
+                      <image src='{{lev4.opt}}' class='opt'></image>
+                    </view>
+                  </view> -->
+                  <block wx:if='{{lev4.nextLevel}}' wx:for='{{lev4.nextLevel}}' wx:key='1' wx:for-item='lev5'>
+                    <view class='hideWrap {{lev4.flag?"show":""}}'>
+                      <template is='table-row' data='{{...lev5,...{index:5} }}'/>
+                      <!-- <view class='lev5 tr' data-id='{{lev5.user_id}}' bindtap='hide'>
+                        <view class='td indent5'><image src='{{lev5.flag?minusImg:plusImg}}' class='plusImg {{!!lev5.nextLevel ? "show":""}}'></image>{{lev5.name}}</view>
+                        <view class='td'>{{lev5.user_id}}</view>
+                        <view class='td'>{{lev5.up_user_id}}</view>
+                        <view class='td {{lev5.mobile?"":"hide"}}'>{{lev5.mobile}}</view>
+                        <view class='td {{lev5.opt?"":"hide"}}'>
+                          <image src='{{lev5.opt}}' class='opt'></image>
+                          <image src='{{lev5.opt}}' class='opt'></image>
+                          <image src='{{lev5.opt}}' class='opt'></image>
+                          <image src='{{lev5.opt}}' class='opt'></image>
+                        </view>
+                      </view> -->
+                      <block wx:if='{{lev5.nextLevel}}' wx:for='{{lev5.nextLevel}}' wx:key='1' wx:for-item='lev6'>
+                        <view class='hideWrap {{lev5.flag?"show":""}}'>
+                          <template is='table-row' data='{{...lev6,...{index:6} }}'/>
+                          <!-- <view class='lev6 tr' data-id='{{lev6.user_id}}' bindtap='hide'>
+                            <view class='td indent6'><image src='{{lev6.flag?minusImg:plusImg}}' class='plusImg {{!!lev6.nextLevel ? "show":""}}'></image>{{lev6.name}}</view>
+                            <view class='td'>{{lev6.user_id}}</view>
+                            <view class='td'>{{lev6.up_user_id}}</view>
+                            <view class='td {{lev6.mobile?"":"hide"}}'>{{lev6.mobile}}</view>
+                            <view class='td {{lev6.opt?"":"hide"}}'>
+                              <image src='{{lev6.opt}}' class='opt'></image>
+                              <image src='{{lev6.opt}}' class='opt'></image>
+                              <image src='{{lev6.opt}}' class='opt'></image>
+                              <image src='{{lev6.opt}}' class='opt'></image>
+                            </view>
+                          </view> -->
+                          <block wx:if='{{lev6.nextLevel}}' wx:for='{{lev6.nextLevel}}' wx:key='1' wx:for-item='lev7'>
+                            <view class='hideWrap {{lev6.flag?"show":""}}'>
+                              <template is='table-row' data='{{...lev7,...{index:7} }}'/>
+                              <!-- <view class='lev7 tr' data-id='{{lev7.user_id}}' bindtap='hide'>
+                                <view class='td indent7'><image src='{{lev7.flag?minusImg:plusImg}}' class='plusImg {{!!lev7.nextLevel ? "show":""}}'></image>{{lev7.name}}</view>
+                                <view class='td'>{{lev7.user_id}}</view>
+                                <view class='td'>{{lev7.up_user_id}}</view>
+                                <view class='td {{lev7.mobile?"":"hide"}}'>{{lev7.mobile}}</view>
+                                <view class='td {{lev7.opt?"":"hide"}}'>
+                                  <image src='{{lev7.opt}}' class='opt'></image>
+                                  <image src='{{lev7.opt}}' class='opt'></image>
+                                  <image src='{{lev7.opt}}' class='opt'></image>
+                                  <image src='{{lev7.opt}}' class='opt'></image>
+                                </view>
+                              </view> -->
+                              <block wx:if='{{lev7.nextLevel}}' wx:for='{{lev7.nextLevel}}' wx:key='1' wx:for-item='lev8'>
+                                <view class='hideWrap {{lev7.flag?"show":""}}'>
+                                  <template is='table-row' data='{{...lev8,...{index:8} }}'/>
+                                  <!-- <view class='lev8 tr' data-id='{{lev8.user_id}}' bindtap='hide'>
+                                    <view class='td indent8'><image src='{{lev8.flag?minusImg:plusImg}}' class='plusImg {{!!lev8.nextLevel ? "show":""}}'></image>{{lev8.name}}</view>
+                                    <view class='td'>{{lev8.user_id}}</view>
+                                    <view class='td'>{{lev8.up_user_id}}</view>
+                                    <view class='td {{lev8.mobile?"":"hide"}}'>{{lev8.mobile}}</view>
+                                    <view class='td {{lev8.opt?"":"hide"}}'>
+                                      <image src='{{lev8.opt}}' class='opt'></image>
+                                      <image src='{{lev8.opt}}' class='opt'></image>
+                                      <image src='{{lev8.opt}}' class='opt'></image>
+                                      <image src='{{lev8.opt}}' class='opt'></image>
+                                    </view>
+                                  </view> -->
+                                  <block wx:if='{{lev8.nextLevel}}' wx:for='{{lev8.nextLevel}}' wx:key='1' wx:for-item='lev9'>
+                                    <view class='hideWrap {{lev8.flag?"show":""}}'>
+                                      <template is='table-row' data='{{...lev9,...{index:9} }}'/>
+                                      <!-- <view class='lev9 tr' data-id='{{lev9.user_id}}' bindtap='jump'>
+                                        <view class='td indent9'>{{lev9.name}}</view>
+                                        <view class='td'>{{lev9.user_id}}</view>
+                                        <view class='td'>{{lev9.up_user_id}}</view>
+                                        <view class='td {{lev9.mobile?"":"hide"}}'>{{lev9.mobile}}</view>
+                                        <view class='td {{lev9.opt?"":"hide"}}'>
+                                          <image src='{{lev9.opt}}' class='opt'></image>
+                                          <image src='{{lev9.opt}}' class='opt'></image>
+                                          <image src='{{lev9.opt}}' class='opt'></image>
+                                          <image src='{{lev9.opt}}' class='opt'></image>
+                                        </view>
+                                      </view> -->
+                                    </view>
+                                  </block>
+                                </view>
+                              </block>
+                            </view>
+                          </block>
+                        </view>
+                      </block>
+                    </view>
+                  </block>
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+

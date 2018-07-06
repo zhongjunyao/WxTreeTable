@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "树形表格",
+  "usingComponents": {
+    "tree-Table": "/components/treetable/treetable"
+  }
+}

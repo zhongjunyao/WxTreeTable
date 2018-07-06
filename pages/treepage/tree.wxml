@@ -1,0 +1,100 @@
+<view class='wrap'>
+  <view class='table'>
+    <view class='tr'>
+      <view class='th td'>名称</view>
+      <view class='th td'>联系人</view>
+      <view class='th td'>主管行业</view>
+      <view class='th td'>联系方式</view>
+      <view class='th td'>操作</view>
+    </view>
+    <block wx:for='{{list}}' wx:key='*this' wx:for-item='lev1' wx:for-index='index1'>
+      <view class='lev1 tr' data-next='{{!!lev1.nextLev}}' data-id='{{lev1.id}}' data-lev='1' data-index='{{index1}}' bindtap='hide'>
+        <!--  -->
+        <!-- <image src='{{collapse1==''?item.plusImg:item.minusImg}}' class='plusImg show'></image> -->
+        <!-- {{collapseList[0][index1]}} -->
+        <view class='td'><image src='{{lev1.flag?minusImg:plusImg}}' class='plusImg {{!!lev1.nextLev ? "show":""}}'></image>{{lev1.danwei}}</view>
+        <view class='td'>{{lev1.lianxiren}}</view>
+        <view class='td'>{{lev1.hangye}}</view>
+        <view class='td'>{{lev1.phone}}</view>
+        <view class='td'>
+          <image src='{{lev1.opt}}' class='opt'></image>
+          <image src='{{lev1.opt}}' class='opt'></image>
+          <image src='{{lev1.opt}}' class='opt'></image>
+          <image src='{{lev1.opt}}' class='opt'></image>
+        </view>
+      </view>
+      <block wx:if='{{lev1.nextLev}}' wx:for='{{lev1.nextLev}}' wx:key='1' wx:for-item='lev2' wx:for-index='index2' class='more2'>
+        <view class='hideWrap {{lev1.flag?"show":""}}'>
+          <view class='lev2 tr' data-next='{{!!lev2.nextLev}}' data-id='{{lev2.id}}' data-lev='2' bindtap='hide'>
+            <view class='td indent2'><image src='{{lev2.flag?minusImg:plusImg}}' class='plusImg {{!!lev2.nextLev ? "show":""}}'></image>{{lev2.danwei}}</view>
+            <view class='td'>{{lev2.lianxiren}}</view>
+            <view class='td'>{{lev2.hangye}}</view>
+            <view class='td'>{{lev2.phone}}</view>
+            <view class='td'>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+              <image src='{{lev2.opt}}' class='opt'></image>
+            </view>
+          </view>
+          <block wx:if='{{lev2.nextLev}}' wx:for='{{lev2.nextLev}}' wx:key='1' wx:for-item='lev3' wx:for-index='index3' class='more3'>
+            <view class='hideWrap {{lev2.flag?"show":""}}'>
+              <view class='lev3 tr'>
+                <view class='td indent3'><image src='{{lev3.flag?minusImg:plusImg}}' class='plusImg {{!!lev3.nextLev ? "show":""}}'></image>{{lev3.danwei}}</view>
+                <view class='td'>{{lev3.lianxiren}}</view>
+                <view class='td'>{{lev3.hangye}}</view>
+                <view class='td'>{{lev3.phone}}</view>
+                <view class='td'>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                  <image src='{{lev3.opt}}' class='opt'></image>
+                </view>
+              </view> 
+            </view>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+
+<!-- 
+    <view class='tr'>
+      <view class='td'>单位1</view>
+      <view class='td'>张三</view>
+      <view class='td'>天然液化气</view>
+      <view class='td'>18844443333</view>
+      <view class='td'>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='td'>单位2</view>
+      <view class='td'>张三</view>
+      <view class='td'>天然液化气</view>
+      <view class='td'>18844443333</view>
+      <view class='td'>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='td'>单位3</view>
+      <view class='td'>张三</view>
+      <view class='td'>天然液化气</view>
+      <view class='td'>18844443333</view>
+      <view class='td'>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+        <image src='/static/images/plus.png' class='opt'></image>
+      </view>
+    </view>
+ -->
+

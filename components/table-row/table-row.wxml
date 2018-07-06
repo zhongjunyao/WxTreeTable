@@ -1,0 +1,13 @@
+<view class='tr' data-id='{{innerLev.user_id}}' bindtap='hide'>
+  <view class='td'><image src='{{innerLev.flag?minusImg:plusImg}}' class='plusImg {{!!innerLev.nextLevel ? "show":""}}'></image>{{innerLev.name}}</view>
+  <view class='td'>
+    <image src='{{lev.head_pic}}' class='head_pic'></image>
+  </view>
+  <view class='td'>{{innerLev.next_num}}</view>
+  <view class='td'>{{innerLev.rebate_total}}</view>
+  <view class='td'>{{innerLev.price_total}}</view>
+  <view class='td'>{{innerLev.order_num}}</view>
+  <view class='td'>{{innerLev.recent_buying_time}}</view>
+  <view class='td'>{{innerLev.reg_time}}</view>
+  <view class='td'>{{innerLev.mobile}}</view>
+</view>
